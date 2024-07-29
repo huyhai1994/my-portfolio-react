@@ -1,22 +1,18 @@
 import React from 'react'
+import styles from './Navbar.module.css'
+import {getImageUrl} from "../../utils.js";
 
 const Navbar = () => {
-    return (<nav>
-        <a href="/">Portfolio</a>
-        <div>
-            <ul>
+    return (<nav className={styles.navbar}>
+        <a className={styles.title} href="/">Portfolio</a>
+        <div className={styles.menu}>
+            <img className={styles.menuBtn} src={getImageUrl('nav/menuIcon.png')} alt="Logo"/>
+            <ul className={styles.menuItems}>
                 <li><a href="#about">About</a></li>
-            </ul>
-            <ul>
                 <li><a href="#experience">Experience</a></li>
-            </ul>
-            <ul>
                 <li><a href="#project">Projects</a></li>
-            </ul>
-            <ul>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-
         </div>
     </nav>)
 }
