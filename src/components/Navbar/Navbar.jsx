@@ -15,7 +15,7 @@ const Navbar = () => {
                     getImageUrl('nav/menuIcon.png')}
                 onClick={() => setMenuOpen(!menuOpen)}
                 alt="Logo"/>
-            <ul className={styles.menuItems}>
+            <ul className={`${styles.menuItems} ${menuOpen && styles.menuOpen}`}>
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#project">Projects</a></li>
