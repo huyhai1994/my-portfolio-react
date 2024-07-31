@@ -1,4 +1,5 @@
 @import "../../vars.css";
+/*TODO:.container: This CSS class styles the container of the hero section. It sets the position to relative, displays the content as a flexbox, aligns the items vertically and horizontally, and applies some margin and z-index properties. */
 
 .container {
     position: relative;
@@ -11,6 +12,7 @@
     margin-right: 10%;
 }
 
+/*TODO: .content: This CSS class styles the content of the hero section, such as the title, description, and contact button. It displays the content as a flexbox column, aligns the items vertically, and applies some color and z-index properties.*/
 .content {
     display: flex;
     flex-direction: column;
@@ -19,6 +21,7 @@
     z-index: 1;
 }
 
+/*TODO: .title: This CSS class styles the title of the hero section. It sets the font size, weight, margin, font family, and applies a background gradient to create a shimmering effect. It also uses CSS variables for color and font family.*/
 .title {
     font-size: 72px;
     font-weight: 900;
@@ -33,12 +36,14 @@
     -webkit-background-clip: text;
 }
 
+/*TODO:.description: This CSS class styles the description of the hero section. It sets the font size, font family, and margin properties. */
 .description {
     font-size: 30px;
     font-family: var(--font-roboto), sans-serif;
     margin-bottom: 52px;
 }
 
+/*TODO: contactBtn: This CSS class styles the contact button of the hero section. It sets the text decoration, background color, color, border radius, font size, font weight, padding, and box shadow properties.*/
 .contactBtn {
     text-decoration: none;
     background-color: var(--color-primary);
@@ -50,6 +55,7 @@
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
 }
 
+/*TODO: heroImg: This CSS class styles the image of the developer in the hero section. It sets the width, border radius, z-index, animation properties, and applies a transition effect.*/
 .heroImg {
     width: 50%;
     border-radius: 50%;
@@ -60,6 +66,7 @@
     animation-timing-function: ease-in-out;
 }
 
+/*TODO: @keyframes floating: This CSS animation named floating creates a floating effect for the hero image. It changes the transform property from translateY(0) to translateY(-10px) and back to translateY(0) over a duration of 3 seconds, with infinite iteration and an ease-in-out timing function.*/
 @keyframes floating {
     0% {
         transform: translateY(0);
@@ -72,6 +79,7 @@
     }
 }
 
+/*TODO: .topBlur: This CSS class styles the top blur effect of the hero section. It sets the position, width, height, minimum width and height, top and left properties, border, filter, and background properties.*/
 .topBlur {
     position: absolute;
     width: 50vw;
@@ -80,8 +88,33 @@
     min-height: 350px;
     top: -128px;
     left: 10vw;
-    border: 764px;
+    border-radius: 764px;
     filter: blur(100px);
     background: rgba(25, 55, 109, 0.7);
     z-index: 0;
+}
+
+.bottomBlur {
+    position: absolute;
+    width: 70vw;
+    height: 50vw;
+    min-width: 350px;
+    min-height: 250px;
+    top: 246px;
+    left: 10vw;
+    right: -25vw;
+    border-radius: 764px;
+    filter: blur(100px);
+    background: rgba(25, 55, 109, 0.7);
+    z-index: 0;
+}
+
+@media screen and (max-width: 830px) {
+    .container {
+        flex-direction: column-reverse;
+    }
+
+    .content {
+        align-items: center;
+    }
 }
